@@ -4,7 +4,7 @@ Donate link: http://mkt.com/bobbie-wilson/woocommerce-super-simple-tax-exemption
 Tags: woocommerce, no tax, tax exempt, tax exempt ID, tax-exempt, checkout
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,3 +31,6 @@ This could be many things. What stumped me at first, was that all the fields nee
 
 = 1.0 =
 * First version. Woot!
+
+= 1.1 =
+* Fixed Woocommerce detection
