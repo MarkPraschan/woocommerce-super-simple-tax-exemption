@@ -3,14 +3,14 @@
    Plugin Name: Woocommerce Super Simple Tax Exemption
    Plugin URI: http://www.bobbiejwilson.com/woocommerce-super-simple-tax-exempt
    Description: A plugin to add simple tax exemption to the Woocommerce checkout page. Records the Tax Exempt ID to the order meta.
-   Version: 1.0
+   Version: 1.1
    Author: Bobbie Wilson
    Author URI: http://www.bobbiejwilson.com
    License: GPL2
    */
 
 /*Tax Exempt Checkout for Woocommerce */
-if (class_exists('Woocommerce')) {
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 add_action('woocommerce_before_order_notes', 'taxexempt_before_order_notes' );
 function taxexempt_before_order_notes( $checkout ) {
 
