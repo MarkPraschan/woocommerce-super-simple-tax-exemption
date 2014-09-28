@@ -3,8 +3,8 @@ Contributors: (poldira)
 Donate link: http://mkt.com/bobbie-wilson/woocommerce-super-simple-tax-exemption-donate
 Tags: woocommerce, no tax, tax exempt, tax exempt ID, tax-exempt, checkout
 Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 1.2
+Tested up to: 4.0
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,3 +37,6 @@ This could be many things. What stumped me at first, was that all the fields nee
 
 = 1.2 =
 * Fixed Tax ID Order Meta (Woocommerce now uses get_post_meta)
+
+= 1.3 =
+* Fixed order processing error. Updated donation URL.

@@ -3,14 +3,19 @@
    Plugin Name: Woocommerce Super Simple Tax Exemption
    Plugin URI: http://www.bobbiejwilson.com/woocommerce-super-simple-tax-exempt
    Description: A plugin to add simple tax exemption to the Woocommerce checkout page. Records the Tax Exempt ID to the order meta.
-   Version: 1.2
+   Version: 1.3
    Author: Bobbie Wilson
    Author URI: http://www.bobbiejwilson.com
    License: GPL2
    */
 
-/*Tax Exempt Checkout for Woocommerce */
+/**
+ * Check if WooCommerce is active
+ **/
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+/*Tax Exempt Checkout for Woocommerce */
+
 add_action('woocommerce_before_order_notes', 'taxexempt_before_order_notes' );
 function taxexempt_before_order_notes( $checkout ) {
 
@@ -56,13 +61,14 @@ function tax_exempt_field_update_order_meta( $order_id ) {
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'tax_exempt_field_display_admin_order_meta', 10, 1 );
  
 function tax_exempt_field_display_admin_order_meta($order){
-    echo '<p><strong>'.__('Tax Exempt ID').':</strong> ' . get_post_meta($order->id, 'Tax Exempt ID', true) . '</p>';
+    echo '<p><strong>'.__('Tax Exempt ID').':</strong> ' . get_post_meta( $order->id, 'Tax Exempt ID', true ) . '</p>';
 }
+
 /*Enqueue the tax exempt trigger script*/
 function woocommerce_tax_exempt_script() {
     wp_enqueue_style('tax-exempt-css', plugins_url('/css/tax-exempt.css', __FILE__ ));
     wp_enqueue_script('tax_exempt', plugins_url('/js/tax-exempt.js', __FILE__ ), array('jquery'), '1.0', true );
 }
 add_action('init', 'woocommerce_tax_exempt_script', 100);
-}//Ends the Woocommerce detection
+}
 ?>
