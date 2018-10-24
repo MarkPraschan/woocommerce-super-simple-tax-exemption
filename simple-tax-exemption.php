@@ -42,9 +42,9 @@ function taxexempt_checkout_update_order_review( $post_data ) {
 
         $woocommerce->customer->set_is_vat_exempt(FALSE);
 
-        parse_str($post_data);
+        parse_str($post_data, $arr);
 
-        if ( isset($tax_exempt_checkbox) && isset($tax_exempt_id) && $tax_exempt_checkbox == '1' && !empty($tax_exempt_id))
+        if ( isset($arr['tax_exempt_checkbox']) && isset($arr['tax_exempt_id']) && $arr['tax_exempt_checkbox'] == '1' && !empty($arr['tax_exempt_id']))
             $woocommerce->customer->set_is_vat_exempt(true);
     }
 /**
