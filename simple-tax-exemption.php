@@ -61,7 +61,7 @@ function tax_exempt_field_update_order_meta( $order_id ) {
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'tax_exempt_field_display_admin_order_meta', 10, 1 );
  
 function tax_exempt_field_display_admin_order_meta($order){
-    echo '<p><strong>'.__('Tax Exempt ID').':</strong> ' . get_post_meta( $order->id, 'Tax Exempt ID', true ) . '</p>';
+    echo '<p><strong>'.__('Tax Exempt ID').':</strong> ' . get_post_meta( $order->get_id(), 'Tax Exempt ID', true ) . '</p>';
 }
 
 /*Enqueue the tax exempt trigger script*/
